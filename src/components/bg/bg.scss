@@ -1,3 +1,49 @@
 .Bg {
   border: 1px solid red;
+  height: 100svh;
+  height: 100vh;
+  .bgContainer {
+    height: 45vh;
+    cursor: pointer;
+    .singleBg {
+      width: 30vh;
+      height: auto;
+    }
+  }
+  .btn {
+    width: 20%;
+  }
+}
+
+// tablet view
+@media all and (max-width: 1024px) {
+  .Bg {
+    .bgContainer {
+      height: 60vh;
+      .singleBg {
+        width: 15vh;
+      }
+      .extra {
+        margin-top: 30vh;
+      }
+    }
+    .btn {
+      width: 40%;
+    }
+  }
+}
+
+// mobile view
+@media all and (max-width: 480px) {
+  .Bg {
+    .bgContainer {
+      height: 50vh;
+      .singleBg {
+        width: 12.5vh;
+      }
+    }
+    .btn {
+      width: 50%;
+    }
+  }
 }

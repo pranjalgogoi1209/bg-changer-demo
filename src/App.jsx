@@ -5,7 +5,7 @@ import Bg from "./components/bg/Bg";
 import Output from "./components/output/Output";
 
 export default function App() {
-  const [currentComponent, setCurrentComponent] = useState("Home");
+  const [currentComponent, setCurrentComponent] = useState("Bg");
 
   const handleComponentChange = (componentName) => {
     setCurrentComponent(componentName);
@@ -22,7 +22,7 @@ export default function App() {
     },
     {
       name: "Bg",
-      component: <Bg />,
+      component: <Bg onComponentChange={handleComponentChange} />,
     },
     {
       name: "Output",
