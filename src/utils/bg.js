@@ -15,7 +15,7 @@ const bgArr = [
     max_group_scale: 0.7,
     user_scale: 0.5,
     horizontal_shift: 1,
-    color_balance: 0.6,
+    color_balance: 0.7,
     feather_px: 5,
   },
   {
@@ -27,9 +27,9 @@ const bgArr = [
     min_group_scale: 0.4,
     max_group_scale: 0.7,
     user_scale: 0.5,
-    horizontal_shift: 1,
-    color_balance: 0.7,
-    feather_px: 5,
+    horizontal_shift: -1,
+    color_balance: 0.4,
+    feather_px: 4,
   },
   {
     id: 3,
