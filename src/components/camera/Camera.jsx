@@ -5,7 +5,7 @@ import { Camera } from "@mediapipe/camera_utils";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./camera.scss";
 
-export default function CameraComponent() {
+export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   const webcamRef = useRef(null);
   const [isCentered, setIsCentered] = useState(false);
   const [base64Image, setBase64Image] = useState(null);
@@ -82,6 +82,11 @@ export default function CameraComponent() {
     return () => clearInterval(countdownInterval);
   }, [isCounting, countdown]);
 
+  const handleSubmit = () => {
+    onCaptureImg(base64Image);
+    onComponentChange("Bg");
+  };
+
   return (
     <div
       className="CameraPage d-flex flex-column justify-content-center align-items-center min-vh-100 vw-100 text-center bg-dark text-light p-4"
@@ -152,7 +157,9 @@ export default function CameraComponent() {
             >
               Retake
             </button>
-            <button className="btn btn-success btn-lg">Submit</button>
+            <button className="btn btn-success btn-lg" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         ) : (
           <button className="btn btn-success btn-lg" onClick={captureImage}>
