@@ -10,8 +10,6 @@ export default function Bg({ onComponentChange, onSelectBg, isLoading }) {
   };
 
   const handleGenerate = () => {
-    console.log(selectedBgId);
-
     if (selectedBgId !== null) {
       onComponentChange("Output");
       const selectedBg = bgArr.find((bg) => bg.id === selectedBgId);
