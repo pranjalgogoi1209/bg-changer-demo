@@ -17,7 +17,7 @@ export default function Home({ onComponentChange }) {
             key={bg.id}
             src={bg.background_b64}
             alt={bg.title}
-            className={`singleBg img-thumbnail border border-2 border-light  ${
+            className={`singleBg img-thumbnail bg-dark border border-2 border-light  ${
               bg.id === 3 ? "extra" : ""
             }`}
           />

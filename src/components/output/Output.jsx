@@ -20,7 +20,7 @@ export default function Output({ onComponentChange, onApiCall, isLoading }) {
       {isLoading && !output ? (
         <div className="Output d-flex flex-column justify-content-center align-items-center gap-5 min-vh-100 vw-100 text-center pt-5">
           <div
-            className="spinner-border bg-white"
+            className="spinner-border"
             role="status"
             style={{
               borderColor: "white",

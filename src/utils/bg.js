@@ -1,8 +1,8 @@
-import bg01 from "./../assets/bg/bg-01.jpg";
-import bg02 from "./../assets/bg/bg-02.jpg";
-import bg03 from "./../assets/bg/bg-03.jpg";
-import bg04 from "./../assets/bg/bg-04.jpg";
-import bg05 from "./../assets/bg/bg-05.jpg";
+import bg01 from "./../assets/bg/bg-01.png";
+import bg02 from "./../assets/bg/bg-02.png";
+import bg03 from "./../assets/bg/bg-03.png";
+import bg04 from "./../assets/bg/bg-04.png";
+import bg05 from "./../assets/bg/bg-05.png";
 
 const bgArr = [
   {
@@ -28,8 +28,8 @@ const bgArr = [
     max_group_scale: 0.7,
     user_scale: 0.5,
     horizontal_shift: 1,
-    color_balance: 0.5,
-    feather_px: 4,
+    color_balance: 0.7,
+    feather_px: 5,
   },
   {
     id: 3,

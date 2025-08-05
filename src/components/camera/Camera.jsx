@@ -4,6 +4,7 @@ import { FaceDetection } from "@mediapipe/face_detection";
 import { Camera } from "@mediapipe/camera_utils";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./camera.scss";
+import humanMask from "./../../assets/human-mask.png";
 
 export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   const webcamRef = useRef(null);
@@ -117,6 +118,9 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
               {!hasCaptured && isCounting && (
                 <span className="countdown">{countdown}</span>
               )}
+
+              {/* human mask */}
+              {/* <img src={humanMask} alt="humanMask" className="humanMask" /> */}
 
               {/* Overlay */}
               {/*  <div
