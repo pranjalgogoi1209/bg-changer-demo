@@ -1,8 +1,9 @@
 .Bg {
-  border: 1px solid red;
+  // border: 1px solid red;
   height: 100svh;
   height: 100vh;
   .bgContainer {
+    width: 80%;
     height: 45vh;
     cursor: pointer;
     .singleBg {
@@ -37,6 +38,7 @@
 @media all and (max-width: 480px) {
   .Bg {
     .bgContainer {
+      // width: 90%;
       height: 50vh;
       .singleBg {
         width: 12.5vh;

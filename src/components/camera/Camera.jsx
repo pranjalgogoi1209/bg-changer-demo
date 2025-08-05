@@ -10,6 +10,8 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   const [isCentered, setIsCentered] = useState(false);
   const [base64Image, setBase64Image] = useState(null);
   const [hasCaptured, setHasCaptured] = useState(false);
+  const [countdown, setCountdown] = useState(3);
+  const [isCounting, setIsCounting] = useState(false);
 
   // useEffect(() => {
   //   const faceDetection = new FaceDetection({
@@ -50,16 +52,35 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   // }, []);
 
   const captureImage = () => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setBase64Image(imageSrc);
-    setHasCaptured(true);
-    console.log(imageSrc);
+    setCountdown(3);
+    setIsCounting(true);
+    // handle capture screenshot
   };
 
   const handleRetake = () => {
     setBase64Image(null);
     setHasCaptured(false);
+    setCountdown(3);
   };
+
+  // countdown
+  useEffect(() => {
+    let countdownInterval;
+    if (isCounting && countdown > 0) {
+      countdownInterval = setInterval(() => {
+        setCountdown((prevCountdown) => prevCountdown - 1);
+      }, 1000);
+    } else if (isCounting && countdown === 0) {
+      if (webcamRef.current.getScreenshot()) {
+        const imageSrc = webcamRef.current.getScreenshot();
+        setBase64Image(imageSrc);
+        setHasCaptured(true);
+      }
+      setIsCounting(false);
+    }
+
+    return () => clearInterval(countdownInterval);
+  }, [isCounting, countdown]);
 
   const handleSubmit = () => {
     onCaptureImg(base64Image);
@@ -92,6 +113,11 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
                 screenshotQuality={1}
                 mirrored={true}
               />
+              {/* countdown */}
+              {!hasCaptured && isCounting && (
+                <span className="countdown">{countdown}</span>
+              )}
+
               {/* Overlay */}
               {/*  <div
               style={{
