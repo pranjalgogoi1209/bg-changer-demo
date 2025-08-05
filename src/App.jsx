@@ -5,7 +5,7 @@ import Bg from "./components/bg/Bg";
 import Output from "./components/output/Output";
 
 export default function App() {
-  const [currentComponent, setCurrentComponent] = useState("Home");
+  const [currentComponent, setCurrentComponent] = useState("Camera");
   const components = [
     {
       name: "Home",
