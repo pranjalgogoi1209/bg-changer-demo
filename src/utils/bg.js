@@ -40,9 +40,9 @@ const bgArr = [
     min_group_scale: 0.4,
     max_group_scale: 0.7,
     user_scale: 0.5,
-    horizontal_shift: 1,
+    horizontal_shift: -1,
     color_balance: 0.6,
-    feather_px: 4,
+    feather_px: 5,
   },
   {
     id: 4,
