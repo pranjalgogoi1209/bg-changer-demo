@@ -21,7 +21,7 @@ export default function Bg({ onComponentChange, onSelectBg }) {
 
   return (
     <div className="Bg d-flex flex-column justify-content-start align-items-center gap-5 min-vh-100 vw-100 text-center pt-5">
-      <h1 className="mb-4 fw-bold text-light text-shadow mt-3">
+      <h1 className="mb-2 fw-bold text-light text-shadow mt-3">
         SELECT A BACKGROUND
       </h1>
       <div className="bgContainer d-flex flex-column flex-wrap justify-content-center align-items-center gap-3 mb-4">

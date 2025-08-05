@@ -8,7 +8,7 @@ export default function Home({ onComponentChange }) {
       className="Home d-flex flex-column justify-content-start align-items-center gap-5 min-vh-100 vw-100 text-center pt-5"
       style={{ overflow: "hidden" }}
     >
-      <h1 className="mb-4 fw-bold text-light text-shadow mt-3">
+      <h1 className="mb-2 fw-bold text-light text-shadow mt-3">
         BACKGROUND CHANGER
       </h1>
       <div className="bgContainer d-flex flex-column flex-wrap justify-content-center align-items-center gap-3 mb-4">
@@ -26,7 +26,7 @@ export default function Home({ onComponentChange }) {
       <button
         className="btn btn-primary btn-lg shadow"
         style={{ fontWeight: 700 }}
-        onClick={() => onComponentChange("Camera")}
+        onClick={() => onComponentChange("Gender")}
       >
         START
       </button>
