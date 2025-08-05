@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import "./bg.scss";
 import bgArr from "../../utils/bg";
 
-export default function Bg({ onComponentChange, onSelectBg, isLoading }) {
+export default function Bg({ onComponentChange, onSelectBg }) {
   const [selectedBgId, setSelectedBgId] = useState(null);
 
   const handleSelectBg = (id) => {
     setSelectedBgId(id);
+    console.log(id);
   };
 
   const handleGenerate = () => {
     if (selectedBgId !== null) {
-      onComponentChange("Output");
       const selectedBg = bgArr.find((bg) => bg.id === selectedBgId);
+      console.log("selectedBg", selectedBg);
       onSelectBg(selectedBg);
+      onComponentChange("Output");
     } else {
       alert("Please select a background first");
     }
