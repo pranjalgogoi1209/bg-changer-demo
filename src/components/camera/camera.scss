@@ -32,6 +32,14 @@
         object-fit: cover !important;
         display: block;
       }
+      .countdown {
+        position: absolute;
+        top: 40%;
+        font-size: 5svh;
+        color: #fff;
+        background: none;
+        text-shadow: 0 0 12px #fff, 0 0 50px #fff, 0 0 100px #fff;
+      }
     }
     .uploadedImgContainer {
       width: 30vh;
