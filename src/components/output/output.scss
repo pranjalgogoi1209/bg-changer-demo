@@ -1,3 +1,36 @@
 .Output {
-  border: 1px solid red;
+  height: 100svh;
+  height: 100vh;
+  .singleBg {
+    width: 40vh;
+    height: auto;
+  }
+
+  .btn {
+    width: 20%;
+  }
+}
+
+// tablet view
+@media all and (max-width: 1024px) {
+  .Output {
+    .singleBg {
+      width: 40vh;
+    }
+    .btn {
+      width: 40%;
+    }
+  }
+}
+
+// mobile view
+@media all and (max-width: 480px) {
+  .Output {
+    .singleBg {
+      width: 30vh;
+    }
+    .btn {
+      width: 50%;
+    }
+  }
 }
