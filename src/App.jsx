@@ -5,11 +5,16 @@ import Bg from "./components/bg/Bg";
 import Output from "./components/output/Output";
 
 export default function App() {
-  const [currentComponent, setCurrentComponent] = useState("Camera");
+  const [currentComponent, setCurrentComponent] = useState("Home");
+
+  const handleComponentChange = (componentName) => {
+    setCurrentComponent(componentName);
+  };
+
   const components = [
     {
       name: "Home",
-      component: <Home />,
+      component: <Home onComponentChange={handleComponentChange} />,
     },
     {
       name: "Camera",

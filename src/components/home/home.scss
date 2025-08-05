@@ -2,4 +2,48 @@
   border: 1px solid red;
   height: 100svh;
   height: 100vh;
+  .bgContainer {
+    height: 45vh;
+    .singleBg {
+      width: 30vh;
+      height: auto;
+      border: 1px solid white;
+    }
+  }
+  .btn {
+    width: 20%;
+  }
+}
+
+// tablet view
+@media all and (max-width: 1024px) {
+  .Home {
+    .bgContainer {
+      height: 60vh;
+      .singleBg {
+        width: 15vh;
+      }
+      .extra {
+        margin-top: 30vh;
+      }
+    }
+    .btn {
+      width: 40%;
+    }
+  }
+}
+
+// mobile view
+@media all and (max-width: 480px) {
+  .Home {
+    .bgContainer {
+      height: 50vh;
+      .singleBg {
+        width: 12vh;
+      }
+    }
+    .btn {
+      width: 50%;
+    }
+  }
 }
