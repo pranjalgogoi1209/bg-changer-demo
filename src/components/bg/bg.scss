@@ -20,6 +20,7 @@
 @media all and (max-width: 1024px) {
   .Bg {
     .bgContainer {
+      width: 75%;
       height: 60vh;
       .singleBg {
         width: 15vh;
@@ -38,7 +39,7 @@
 @media all and (max-width: 480px) {
   .Bg {
     .bgContainer {
-      // width: 90%;
+      width: 95%;
       height: 50vh;
       .singleBg {
         width: 12.5vh;

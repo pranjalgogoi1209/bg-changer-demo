@@ -89,7 +89,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
 
   return (
     <div
-      className="CameraPage d-flex flex-column justify-content-center align-items-center min-vh-100 vw-100 text-center bg-dark text-light p-4"
+      className="CameraPage d-flex flex-column justify-content-center align-items-center min-vh-100 vw-100 text-center text-light p-4"
       style={{ overflow: "hidden" }}
     >
       <div className="camera d-flex flex-column justify-content-center align-items-center">

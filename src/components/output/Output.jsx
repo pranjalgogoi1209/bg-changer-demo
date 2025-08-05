@@ -24,14 +24,14 @@ export default function Output({ onComponentChange, onApiCall, isLoading }) {
             role="status"
             style={{
               borderColor: "white",
-              borderRightColor: "transparent", // create the spinning effect
+              borderRightColor: "transparent",
             }}
           >
             <span className="visually-hidden"></span>
           </div>
-          <h2 className="mb-4 fw-bold text-light text-shadow mt-3">
-            Please Wait We are Generating Your Image
-          </h2>
+          <h3 className="mb-4 fw-semi-bold text-light text-shadow mt-3">
+            Please Wait We are Generating Your Image...
+          </h3>
         </div>
       ) : (
         <div className="Output d-flex flex-column justify-content-start align-items-center gap-5 min-vh-100 vw-100 text-center pt-5">

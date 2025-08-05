@@ -6,7 +6,7 @@ export default function Home({ onComponentChange }) {
   return (
     <div
       className="Home d-flex flex-column justify-content-start align-items-center gap-5 min-vh-100 vw-100 text-center pt-5"
-      style={{ overflow: "hidden", background: "rgba(0,0,0,0.6)" }}
+      style={{ overflow: "hidden" }}
     >
       <h1 className="mb-4 fw-bold text-light text-shadow mt-3">
         BACKGROUND CHANGER
@@ -17,7 +17,7 @@ export default function Home({ onComponentChange }) {
             key={bg.id}
             src={bg.background_b64}
             alt={bg.title}
-            className={`singleBg img-thumbnail bg-dark border border-2 border-light shadow ${
+            className={`singleBg img-thumbnail border border-2 border-light  ${
               bg.id === 3 ? "extra" : ""
             }`}
           />
