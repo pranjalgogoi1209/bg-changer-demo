@@ -1,38 +1,36 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./home.scss";
+import bgArr from "../../utils/bg";
 
-export default function Home() {
+export default function Home({ onComponentChange }) {
   return (
-    <div className="Home container p-5 text-center">
-      <h1 className="mb-4">Background Changer</h1>
-      <div className="d-flex justify-content-center gap-3 mb-4">
-        <img
-          src="image1.jpg"
-          alt="Image 1"
-          className="img-thumbnail"
-          width={100}
-        />
-        <img
-          src="image2.jpg"
-          alt="Image 2"
-          className="img-thumbnail"
-          width={100}
-        />
-        <img
-          src="image3.jpg"
-          alt="Image 3"
-          className="img-thumbnail"
-          width={100}
-        />
-        <img
-          src="image4.jpg"
-          alt="Image 4"
-          className="img-thumbnail"
-          width={100}
-        />
+    <div
+      className="Home d-flex flex-column justify-content-start align-items-center gap-5 min-vh-100 vw-100 text-center pt-5"
+      style={{ overflow: "hidden", background: "rgba(0,0,0,0.6)" }}
+    >
+      <h1 className="mb-4 fw-bold text-light text-shadow mt-3">
+        BACKGROUND CHANGER
+      </h1>
+      <div className="bgContainer d-flex flex-column flex-wrap justify-content-center align-items-center gap-3 mb-4">
+        {bgArr?.map((bg) => (
+          <img
+            key={bg.id}
+            src={bg.background_b64}
+            alt={bg.title}
+            className={`singleBg img-thumbnail bg-dark border border-2 border-light shadow ${
+              bg.id === 3 ? "extra" : ""
+            }`}
+          />
+        ))}
       </div>
-      <button className="btn btn-primary btn-lg">START</button>
+      <button
+        className="btn btn-primary btn-lg shadow"
+        style={{ fontWeight: 700 }}
+        onClick={() => onComponentChange("Camera")}
+      >
+        START
+      </button>
     </div>
   );
 }
