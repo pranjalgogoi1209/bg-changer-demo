@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./home.scss";
 import bgArr from "../../utils/bg";
 
