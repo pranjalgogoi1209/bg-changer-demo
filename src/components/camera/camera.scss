@@ -1,3 +1,111 @@
-.Camera {
-  border: 1px solid red;
+// mobile view
+.CameraPage {
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+  .camera {
+    position: absolute;
+    gap: 3vh;
+    gap: 3svh;
+    top: 20%;
+    .webcamContainer {
+      border: 2px solid white;
+      width: 30vh;
+      width: 30svh;
+      height: 30vh;
+      height: 30svh;
+      background-color: #fff;
+      position: relative;
+      border-radius: 0.2svh;
+      #webcam,
+      .caturedImg {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block;
+      }
+    }
+    .uploadedImgContainer {
+      width: 30vh;
+      width: 30svh;
+      height: 30vh;
+      height: 30svh;
+      object-fit: cover;
+      background-color: #fff;
+      position: relative;
+      .uploadImg {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+    .cameraFrame {
+      width: 106%;
+      height: 106%;
+      position: absolute;
+      top: -3%;
+      left: -3%;
+      z-index: 1;
+    }
+    .footer {
+      .btnContainer {
+        gap: 1.5vh;
+        gap: 1.5svh;
+        .button {
+          width: 25vh;
+          width: 25svh;
+          gap: 1vh;
+          gap: 1svh;
+          .btnIcon {
+            height: 3vh;
+            height: 3svh;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// tablet view
+@media all and (min-width: 480px) {
+  .CameraPage {
+    .camera {
+      top: 18%;
+      .webcamContainer,
+      .uploadedImgContainer {
+        width: 35vh;
+        width: 35svh;
+        height: 35vh;
+        height: 35svh;
+      }
+    }
+  }
+}
+
+// laptop view
+@media all and (min-width: 1025px) {
+  .CameraPage {
+    .camera {
+      top: 14%;
+      margin-top: 2vh;
+      margin-top: 2svh;
+      .webcamContainer,
+      .uploadedImgContainer {
+        width: 38vh;
+        width: 38svh;
+        height: 38vh;
+        height: 38svh;
+      }
+    }
+  }
 }
