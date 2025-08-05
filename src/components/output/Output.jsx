@@ -19,7 +19,14 @@ export default function Output({ onComponentChange, onApiCall, isLoading }) {
     <>
       {isLoading && !output ? (
         <div className="Output d-flex flex-column justify-content-center align-items-center gap-5 min-vh-100 vw-100 text-center pt-5">
-          <div className="spinner-border" role="status">
+          <div
+            className="spinner-border bg-white"
+            role="status"
+            style={{
+              borderColor: "white",
+              borderRightColor: "transparent", // create the spinning effect
+            }}
+          >
             <span className="visually-hidden"></span>
           </div>
           <h2 className="mb-4 fw-bold text-light text-shadow mt-3">

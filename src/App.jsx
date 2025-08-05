@@ -35,8 +35,6 @@ export default function App() {
       });
     }
 
-    console.log(selectedBg.background_b64);
-
     // Convert both images to base64 strings
     const [background_b64] = await Promise.all([
       fetchImageAsBase64(selectedBg.background_b64),

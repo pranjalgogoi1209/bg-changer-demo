@@ -7,13 +7,11 @@ export default function Bg({ onComponentChange, onSelectBg }) {
 
   const handleSelectBg = (id) => {
     setSelectedBgId(id);
-    console.log(id);
   };
 
   const handleGenerate = () => {
     if (selectedBgId !== null) {
       const selectedBg = bgArr.find((bg) => bg.id === selectedBgId);
-      console.log("selectedBg", selectedBg);
       onSelectBg(selectedBg);
       onComponentChange("Output");
     } else {
@@ -30,7 +28,7 @@ export default function Bg({ onComponentChange, onSelectBg }) {
         {bgArr?.map((bg) => (
           <div
             key={bg.id}
-            className={`singleBg img-thumbnail bg-dark border border-2 border-light shadow position-relative ${
+            className={`singleBg img-thumbnail bg-dark border border-2 shadow position-relative ${
               bg.id === 3 ? "extra" : ""
             } ${selectedBgId === bg.id ? "border-primary" : "border-light"}`}
             onClick={() => handleSelectBg(bg.id)}
