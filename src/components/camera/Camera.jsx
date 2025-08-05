@@ -57,9 +57,11 @@ export default function CameraComponent() {
   }, []);
 
   const captureImage = () => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setBase64Image(imageSrc);
-    setHasCaptured(true);
+    if (isCentered) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      setBase64Image(imageSrc);
+      setHasCaptured(true);
+    }
   };
 
   const handleRetake = () => {
@@ -72,7 +74,7 @@ export default function CameraComponent() {
       <Webcam
         ref={webcamRef}
         audio={false}
-        screenshotFormat="image/jpeg"
+        screenshotFormat="image/png"
         videoConstraints={{ facingMode: "user" }}
         style={{
           width: "100%",
@@ -121,7 +123,9 @@ export default function CameraComponent() {
       {hasCaptured ? (
         <button onClick={handleRetake}>Retake</button>
       ) : (
-        <button onClick={captureImage}>Capture</button>
+        <button onClick={captureImage} disabled={!isCentered}>
+          Capture
+        </button>
       )}
     </div>
   );
