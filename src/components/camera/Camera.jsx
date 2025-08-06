@@ -17,7 +17,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   const [copied, setCopied] = useState(false);
 
   // Add this handler for copying to clipboard
-  const handleCopyBase64 = async () => {
+  /*   const handleCopyBase64 = async () => {
     try {
       await navigator.clipboard.writeText(base64Image.split(",")[1]);
       setCopied(true);
@@ -25,7 +25,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
     } catch (err) {
       alert("Failed to copy!");
     }
-  };
+  }; */
 
   // useEffect(() => {
   //   const faceDetection = new FaceDetection({
@@ -177,12 +177,12 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
             <button className="btn btn-success btn-lg" onClick={handleSubmit}>
               Submit
             </button>
-            <button
+            {/* <button
               className="btn btn-outline-primary btn-lg"
               onClick={() => setShowModal(true)}
             >
               Get Base64 Link
-            </button>
+            </button> */}
           </div>
         ) : (
           <button className="btn btn-success btn-lg" onClick={captureImage}>
@@ -192,7 +192,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
       </div>
 
       {/* Bootstrap Modal for Copy */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+      {/*   <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Copy Base64 Link</Modal.Title>
         </Modal.Header>
@@ -205,7 +205,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
             {copied ? "Copied!" : "Copy"}
           </Button>
         </Modal.Body>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }
