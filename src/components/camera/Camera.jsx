@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import { FaceDetection } from "@mediapipe/face_detection";
 import { Camera } from "@mediapipe/camera_utils";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Modal, Button } from "react-bootstrap";
 import "./camera.scss";
 import humanMask from "./../../assets/human-mask.png";
 
@@ -13,6 +13,19 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   const [hasCaptured, setHasCaptured] = useState(false);
   const [countdown, setCountdown] = useState(3);
   const [isCounting, setIsCounting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  // Add this handler for copying to clipboard
+  const handleCopyBase64 = async () => {
+    try {
+      await navigator.clipboard.writeText(base64Image);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      alert("Failed to copy!");
+    }
+  };
 
   // useEffect(() => {
   //   const faceDetection = new FaceDetection({
@@ -52,10 +65,10 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   //   }
   // }, []);
 
+  // handle capture screenshot
   const captureImage = () => {
     setCountdown(3);
     setIsCounting(true);
-    // handle capture screenshot
   };
 
   const handleRetake = () => {
@@ -164,6 +177,12 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
             <button className="btn btn-success btn-lg" onClick={handleSubmit}>
               Submit
             </button>
+            <button
+              className="btn btn-outline-primary btn-lg"
+              onClick={() => setShowModal(true)}
+            >
+              Get Base64 Link
+            </button>
           </div>
         ) : (
           <button className="btn btn-success btn-lg" onClick={captureImage}>
@@ -171,6 +190,21 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
           </button>
         )}
       </div>
+      {/* Bootstrap Modal for Copy */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Copy Base64 Link</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="d-flex flex-column align-items-center">
+          <span className="mb-3">
+            Press the button below to copy your base64 image string to
+            clipboard.
+          </span>
+          <Button variant="primary" onClick={handleCopyBase64}>
+            {copied ? "Copied!" : "Copy"}
+          </Button>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
