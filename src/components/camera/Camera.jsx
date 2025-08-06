@@ -19,7 +19,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   // Add this handler for copying to clipboard
   const handleCopyBase64 = async () => {
     try {
-      await navigator.clipboard.writeText(base64Image);
+      await navigator.clipboard.writeText(base64Image.split(",")[1]);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (err) {
