@@ -45,7 +45,7 @@ export default function App() {
     const prompts = {
       Male: "A high-resolution, front-facing portrait of the same man, keeping his original face intact. He is confidently standing with his arms folded, wearing a traditional Bengali outfit — an elegant, richly embroidered kurta made of silk in a warm tone (such as cream, beige, or maroon).",
       Female:
-        "A high-resolution, front-facing portrait of the same woman, keeping her original face intact. She is confidently standing with her arms gracefully folded, wearing traditional Bengali attire — an elegant, richly embroidered silk saree in a warm tone (such as cream, beige, or maroon), draped in the classic Bengali style. Her hair is neatly styled, and she wears subtle traditional jewelry like jhumkas and bangles.",
+        "the woman is wearing an sari , the background is green and the pose and face are the same",
     };
 
     const submitData = {
