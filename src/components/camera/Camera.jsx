@@ -123,7 +123,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
     onComponentChange("Bg");
   };
 
-  console.log(isCentered);
+  // console.log(isCentered);
 
   return (
     <div
