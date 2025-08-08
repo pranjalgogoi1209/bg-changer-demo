@@ -79,7 +79,7 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
   // Capture image
   const captureImage = () => {
     if (!isCentered) {
-      alert("Please keep your face in the center!");
+      alert("Please keep your face in the center of the mask!");
       return;
     }
     if (webcamRef.current?.getScreenshot()) {
@@ -160,7 +160,11 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
             </button>
           </div>
         ) : (
-          <button className="btn btn-success btn-lg" onClick={captureImage}>
+          <button
+            className={`btn btn-success btn-lg ${isCentered ? "" : "disabled"}`}
+            disabled={!isCentered}
+            onClick={captureImage}
+          >
             Capture
           </button>
         )}
