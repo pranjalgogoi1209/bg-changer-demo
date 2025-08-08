@@ -50,15 +50,25 @@ export default function CameraComponent({ onComponentChange, onCaptureImg }) {
       if (results.detections.length > 0) {
         const face = results.detections[0];
         const box = face.boundingBox;
-        const centerTolerance = 0.1;
-        const isXCentered = Math.abs(box.xCenter - 0.5) < centerTolerance;
-        const isYCentered = Math.abs(box.yCenter - 0.5) < centerTolerance;
-        setIsCentered(isXCentered && isYCentered);
+
+        // Horizontal centering tolerance
+        const centerToleranceX = 0.1;
+
+        // Vertical position limit (allow slightly below center)
+        const topZoneMaxY = 0.55; // 0 = top, 1 = bottom
+
+        // Minimum face height (normalized)
+        const minFaceHeight = 0.3; // ~30% of frame height
+
+        const isXCentered = Math.abs(box.xCenter - 0.5) < centerToleranceX;
+        const isInUpperZone = box.yCenter < topZoneMaxY;
+        const isFullFaceVisible = box.height >= minFaceHeight;
+
+        setIsCentered(isXCentered && isInUpperZone && isFullFaceVisible);
       } else {
         setIsCentered(false);
       }
     });
-
     startCamera();
 
     return () => {

@@ -43,8 +43,9 @@ export default function App() {
     ]);
 
     const prompts = {
-      Male: "charactor wearing bengali traditional attire",
-      Female: "charactor wearing bengali traditional attire",
+      Male: "man  wearing traditional Bengali attire — an elegant cream silk kurta with intricate red .",
+      Female:
+        "female wearing traditional Bengali attire — an elegant silk white saree with red embroidery.",
     };
 
     const submitData = {
