@@ -138,8 +138,9 @@
   pointer-events: none;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: transparent;
+  margin-top: 15%;
   .scan-circle {
     border-radius: 50%;
     width: 45%;
