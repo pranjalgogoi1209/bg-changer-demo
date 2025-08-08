@@ -15,8 +15,8 @@ const bgArr = [
     max_group_scale: 0.7,
     user_scale: 0.5,
     horizontal_shift: 1,
-    color_balance: 0.7,
-    feather_px: 5,
+    color_balance: 0.6,
+    feather_px: 2,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const bgArr = [
     user_scale: 0.5,
     horizontal_shift: -1,
     color_balance: 0.4,
-    feather_px: 4,
+    feather_px: 2,
   },
   {
     id: 3,
@@ -40,9 +40,9 @@ const bgArr = [
     min_group_scale: 0.4,
     max_group_scale: 0.7,
     user_scale: 0.5,
-    horizontal_shift: -1,
+    horizontal_shift: 1,
     color_balance: 0.6,
-    feather_px: 5,
+    feather_px: 2,
   },
   {
     id: 4,
@@ -53,9 +53,9 @@ const bgArr = [
     min_group_scale: 0.4,
     max_group_scale: 0.7,
     user_scale: 0.5,
-    horizontal_shift: -1,
+    horizontal_shift: 1,
     color_balance: 0.6,
-    feather_px: 5,
+    feather_px: 2,
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const bgArr = [
     user_scale: 0.5,
     horizontal_shift: 1,
     color_balance: 0.7,
-    feather_px: 5,
+    feather_px: 2,
   },
 ];
 
