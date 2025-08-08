@@ -41,7 +41,7 @@ const bgArr = [
     max_group_scale: 0.7,
     user_scale: 1,
     horizontal_shift: 1,
-    color_balance: 0.6,
+    color_balance: 0.5,
     feather_px: 2,
   },
   {
